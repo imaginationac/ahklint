@@ -17,9 +17,11 @@ first parameter to the script.
 
 ### Design
 
-Modular: A set of functionality to test should be broken into a seperate module, 
+- Modular: A set of functionality to test should be broken into a seperate module, 
 in a seperate file. This allows granular controls of tests if need be. For now,
 I'm not going to bother, but if I write a second module, that'll be happening.
+- Tests: Every module needs a test script.
+- Self-passing: ahklint.ahk must pass itself.
 
 ### How to help
 

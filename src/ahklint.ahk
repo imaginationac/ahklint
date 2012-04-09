@@ -10,6 +10,8 @@
 FileEncoding, UTF-8-RAW
 FileName = %1%
 FileContents := []
+Report := {}
+
 ; Read file contents
 Loop, Read, %FileName%
 {
@@ -21,17 +23,20 @@ Loop, Read, %FileName%
 ; i.e:
 ; :*:abc::string1
 ; :*:abcd::string2
-HotStrings := []
+Hotstrings := []
 For Index, Value in FileContents
 {
-	If(SubStr(Value, 1, 1) == ":")
+	If(SubStr(Value, 1, 2) == ":*")
 	{
-		MsgBox, This is a hotstring.
-	}
-	Else
-	{
-		MsgBox, This is not a hotstring.
+		;Report["Hotstring"] := 1
+		Report[Index] := "This hotstring does not use a ending character trigger. If '#Hotstring *0' is not specified, there is a risk of conflicting hotstrings."
 	}
 }
 
+ReportString := ""
+For Key, Value in Report
+{
+	ReportString := ReportString . Key . ": " Value . "`n"
+}
 
+MsgBox, %ReportString%
