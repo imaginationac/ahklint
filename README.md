@@ -1,7 +1,6 @@
 # ahklint.ahk
 
-## A static analysis program for [Autohotkey](http://www.autohotkey.com) 
-programs, written in Autohotkey.
+## A static analysis program for [Autohotkey](http://www.autohotkey.com) programs, written in Autohotkey.
 
 Like other lint programs before it, ahklint will hurt your feelings, but will be worth it.
 
